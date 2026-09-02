@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <title>Welcome to My Blog</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
+        /* Home Page Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.home-container {
+    height: 100vh; /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('https://source.unsplash.com/1600x900/?nature,blog') no-repeat center center/cover; 
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+.home-container h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.home-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Get Started Button */
+.get-started-btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.get-started-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+     </style>
+</head>
+<body>
+
+    <div class="home-container">
+        <h1>Welcome to My Blog</h1>
+        <p>Share your thoughts and explore amazing blogs!</p>
+        <a href="#" class="get-started-btn" onclick="redirectUser()">Get Started</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>
+        function redirectUser() {
+            const token = localStorage.getItem("accessToken");
+
+            if (token) {
+                // If user is logged in, go to Blog Page
+                window.location.href = "index.html";
+            } else {
+                // If user is NOT logged in, go to Login Page
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+
+
+</body>
+</html>

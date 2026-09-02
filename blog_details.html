@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
+        /* ✅ Reset Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ✅ Body Styling (Dark Mode) */
+body {
+    background-color: #121212; /* Pure Dark Mode */
+    color: #E0E0E0; /* Light Grey Text */
+    padding-top: 80px; /* Prevent content from hiding behind navbar */
+}
+
+/* ✅ Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1E1E1E; /* Dark Grey Navbar */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+/* ✅ Navbar Links */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: #E0E0E0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    background-color: #333;
+    color: #00ADB5;
+    border-radius: 5px;
+}
+
+/* ✅ Blog Details Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 25px;
+    background: #1E1E1E; /* Dark Grey Background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+/* ✅ Blog Title */
+#blog-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00ADB5; /* Highlighted Text */
+    margin-bottom: 10px;
+}
+
+/* ✅ Blog Metadata (Author, Date, Category) */
+#blog-category,
+#blog-author,
+#blog-date {
+    font-size: 14px;
+    color: #CFCFCF; /* Light Grey for Better Contrast */
+    margin-bottom: 5px;
+}
+
+/* ✅ Blog Content */
+#blog-content {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #E0E0E0;
+    margin-top: 15px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #blog-title {
+        font-size: 24px;
+    }
+
+    #blog-content {
+        font-size: 16px;
+    }
+}
+
+     </style>
+</head>
+<body onload="loadBlogDetails()">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2>My Blog</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="add_blog.html">Add New Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- Blog Details -->
+    <div class="container">
+        <h1 id="blog-title"></h1>
+        <p id="blog-category"></p>
+        <p id="blog-author"></p>
+        <p id="blog-date"></p>
+        <p id="blog-content"></p>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
