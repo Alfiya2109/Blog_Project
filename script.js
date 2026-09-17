@@ -49,7 +49,44 @@ function showToast(message, type = "success") {
 function loginRedirect() {
     window.location.href = "login.html";  // Redirect to the login page
 }
+
 let allBlogs = []; // ✅ Store all blogs in memory
+
+const defaultDemoPosts = [
+    {
+        id: 1,
+        title: "Architecting Scalable Microservices with Python and React",
+        content: "Modern enterprise platforms require decoupled API architectures with robust state management, JWT authentication workflows, and resilient fallback strategies across distributed cloud environments.",
+        category: "IT",
+        created_at: new Date().toISOString(),
+        author: "Alfiya Khan"
+    },
+    {
+        id: 2,
+        title: "The Future of AI-Powered Developer Tooling in 2026",
+        content: "From automated test generation to intelligent vector search and semantic document retrieval, developer velocity is scaling rapidly using LLMs and LangChain orchestrations.",
+        category: "IT",
+        created_at: new Date(Date.now() - 86400000).toISOString(),
+        author: "Alfiya Khan"
+    },
+    {
+        id: 3,
+        title: "Holistic Health and Mental Ergonomics in Tech Workspaces",
+        content: "Balancing high-performance engineering sprints with psychological safety, ergonomic workspaces, and continuous mindfulness creates sustainable high-output engineering cultures.",
+        category: "Medical",
+        created_at: new Date(Date.now() - 172800000).toISOString(),
+        author: "Alfiya Khan"
+    },
+    {
+        id: 4,
+        title: "Modern UI/UX Design Systems with Tailwind CSS & Motion",
+        content: "Crafting accessible, responsive web experiences with dynamic color tokens, fluid micro-interactions, and sub-second rendering across mobile and desktop devices.",
+        category: "Social",
+        created_at: new Date(Date.now() - 259200000).toISOString(),
+        author: "Alfiya Khan"
+    }
+];
+
 
 // ✅ Function to Fetch and Display Blog Posts
 function fetchBlogs() {
@@ -381,3 +418,11 @@ function searchBlogs() {
         displayBlogs(filteredBlogs); // ✅ Show filtered blogs
     }
 }
+
+// Auto pre-fill login inputs on page load
+document.addEventListener("DOMContentLoaded", () => {
+    const u = document.getElementById("username");
+    const p = document.getElementById("password");
+    if (u && !u.value) u.value = "admin";
+    if (p && !p.value) p.value = "admin123";
+});
