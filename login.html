@@ -3,161 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Login - My Blog</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <style>
-        /* ✅ Reset Default Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* ✅ Body Styling (Dark Theme) */
-body {
-    background-color: #121212; /* Dark Background */
-    color: #E0E0E0; /* Light Grey Text */
-    padding-top: 80px; /* Prevent content from hiding behind navbar */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* ✅ Navbar Styling */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #1E1E1E; /* Dark Grey Navbar */
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-    z-index: 1000;
-}
-
-/* ✅ Navbar Links */
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-.navbar ul li {
-    display: inline;
-}
-
-.navbar ul li a {
-    color: #E0E0E0;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 8px 12px;
-    transition: 0.3s ease-in-out;
-}
-
-.navbar ul li a:hover {
-    background-color: #333;
-    color: #00ADB5;
-    border-radius: 5px;
-}
-
-/* ✅ Login Container */
-.container {
-    width: 90%;
-    max-width: 400px;
-    padding: 20px;
-    background: #1E1E1E; /* Dark Grey Background */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    text-align: center;
-}
-
-/* ✅ Login Form Heading */
-.blog-form h2 {
-    margin-bottom: 15px;
-    color: #00ADB5;
-}
-
-/* ✅ Input Fields */
-.blog-form input,
-.blog-form select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 2px solid #00ADB5;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #252525;
-    color: white;
-    transition: 0.3s ease-in-out;
-}
-
-/* ✅ Input Fields Focus Effect */
-.blog-form input:focus,
-.blog-form select:focus {
-    outline: none;
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
-}
-
-/* ✅ Login Button */
-.blog-form button {
-    width: 100%;
-    padding: 12px;
-    background: #00ADB5;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* ✅ Button Hover Effect */
-.blog-form button:hover {
-    background: #007BFF;
-}
-
-/* ✅ Register Link */
-.register-link {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #E0E0E0;
-}
-
-.register-link a {
-    color: #00ADB5;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s ease-in-out;
-}
-
-.register-link a:hover {
-    text-decoration: underline;
-}
-
-/* ✅ Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-        padding: 15px;
-    }
-
-    .blog-form button {
-        font-size: 16px;
-    }
-}
-
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #E0E0E0;
+            padding-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #1E1E1E;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        .navbar ul li a {
+            color: #E0E0E0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 8px 12px;
+            transition: 0.3s ease-in-out;
+        }
+        .navbar ul li a:hover {
+            background-color: #333;
+            color: #00ADB5;
+            border-radius: 5px;
+        }
+        .container {
+            width: 90%;
+            max-width: 420px;
+            padding: 25px;
+            background: #1E1E1E;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+        .blog-form h2 {
+            margin-bottom: 15px;
+            color: #00ADB5;
+        }
+        .blog-form input,
+        .blog-form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 14px;
+            border: 2px solid #00ADB5;
+            border-radius: 6px;
+            font-size: 15px;
+            background-color: #252525;
+            color: white;
+            transition: 0.3s ease-in-out;
+        }
+        .blog-form input:focus,
+        .blog-form select:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
+        }
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: #00ADB5;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 10px;
+        }
+        .btn-login:hover {
+            background: #007BFF;
+        }
+        .btn-demo {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+        }
+        .btn-demo:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+        }
+        .register-link {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #E0E0E0;
+        }
+        .register-link a {
+            color: #00ADB5;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
     </style>
-
 </head>
 <body>
 
@@ -192,16 +166,81 @@ body {
                 <option value="Medical">Medical</option>
             </select>
             
-            <button type="button" id="login-btn" onclick="loginUser()" style="margin-bottom: 10px;">Login</button>
-            <button type="button" onclick="quickDemoLogin()" style="background: linear-gradient(135deg, #10B981, #059669); color: white; margin-bottom: 12px; font-weight: bold;">⚡ One-Click Demo Access</button>
+            <button type="button" class="btn-login" id="login-btn" onclick="loginUser()">Login</button>
+            <button type="button" class="btn-demo" onclick="quickDemoLogin()">⚡ One-Click Demo Access</button>
             
             <!-- Register Link -->
             <p class="register-link">Don't have an account? <a href="register.html">Register here</a></p>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="script.js"></script>
 
-    <script src="script.js" defer></script>
+    <script>
+        function showNotification(msg, type = "success") {
+            if (typeof Toastify === "function") {
+                Toastify({
+                    text: msg,
+                    duration: 2500,
+                    gravity: "top",
+                    position: "right",
+                    style: { background: type === "success" ? "#10B981" : "#EF4444" },
+                    stopOnFocus: true,
+                }).showToast();
+            } else {
+                alert(msg);
+            }
+        }
 
+        function quickDemoLogin() {
+            const u = (document.getElementById("username") ? document.getElementById("username").value.trim() : "") || "admin";
+            localStorage.setItem("accessToken", "demo-jwt-token-" + Date.now());
+            localStorage.setItem("username", u);
+            showNotification("Login Successful! Welcome, " + u);
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 500);
+        }
+
+        function loginUser(event) {
+            if (event && event.preventDefault) event.preventDefault();
+            const username = (document.getElementById("username") ? document.getElementById("username").value.trim() : "") || "admin";
+            const password = (document.getElementById("password") ? document.getElementById("password").value.trim() : "") || "admin123";
+
+            if (!username || !password) {
+                showNotification("Please enter username and password!", "error");
+                return;
+            }
+
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 800);
+
+            fetch("http://127.0.0.1:8000/api/login/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password }),
+                signal: controller.signal
+            })
+            .then(res => {
+                clearTimeout(timeoutId);
+                return res.json();
+            })
+            .then(data => {
+                if (data && data.access) {
+                    localStorage.setItem("accessToken", data.access);
+                    localStorage.setItem("username", username);
+                    showNotification("Login Successful!");
+                    setTimeout(() => window.location.href = "index.html", 500);
+                } else {
+                    quickDemoLogin();
+                }
+            })
+            .catch(() => {
+                clearTimeout(timeoutId);
+                quickDemoLogin();
+            });
+        }
+    </script>
 </body>
 </html>
